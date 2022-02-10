@@ -1,11 +1,16 @@
 <?php
 
-$link = mysqli_connect("localhost", "root", "", "hello_stock");
-if (!$link) {
-    die('Não foi possível conectar: ' . mysql_error());
-}
+if(isset($_POST['cadastrar'])) 
+ {
+   print_r('Funcionando');
+   print_r('<br>');
 
+//Conexão com o Banco de Dados 
+include_once('../config.php'); 
+
+//Variaveis de cadastro
 $login = $_POST['login'];
+$nome = $_POST['nome'];
 $email = $_POST['email'];
 $doc = $_POST['doc'];
 $rsocial = $_POST['rsocial'];
@@ -17,9 +22,11 @@ $bairro = $_POST['bairro'];
 $cidade = $_POST['cidade'];
 $estado = $_POST['estado'];
 
-$select = mysqli_query($link,"SELECT * FROM cliente");
+//Selecionar o Banco de Dados
+$select = mysqli_query($connection,"SELECT * FROM cliente");
 $array = mysqli_fetch_array($select);
 
+//If Else para login vazio
   if($login == "" || $login == null){
     echo"<script language='javascript' type='text/javascript'>
     alert('O campo login deve ser preenchido');window.location.href='
@@ -27,6 +34,7 @@ $array = mysqli_fetch_array($select);
 
     }else{
 
+      //Geração de senha (Muito boa inclusive :) )
       function gerar_senha($tamanho, $maiusculas, $minusculas, $numeros, $simbolos){
         $senha = "0"; // inicia a váriavel
         $ma = "ABCDEFGHIJKLMNOPQRSTUVYXWZ"; // $ma contem as letras maiúsculas
@@ -61,7 +69,13 @@ $array = mysqli_fetch_array($select);
         $senhainc = gerar_senha(10, true, true, true, true); // criar a senha sem criptografia MD5
         $senhafull = MD5($senhainc); // passando para o MD5
 
-        $query = mysqli_query($link,"INSERT INTO cliente (nome, cpfcnpj, social, cep, endereco, bairro, contato, email, endumero, cidade, estado, senha) VALUES ('$login','$doc','$rsocial','$cep','$endereco','$bairro','$contato','$email','$endnumero','$cidade','$estado','$senhafull')");
+        //Enviar informações ao Banco de dados
+        $query = mysqli_query($connection,"INSERT INTO cliente (nome, cpfcnpj, social, cep, endereco, bairro, contato, email, endumero, cidade, estado, senha) VALUES ('$login','$doc','$rsocial','$cep','$endereco','$bairro','$contato','$email','$endnumero','$cidade','$estado','$senhafull')");
       }
+
+    }
+    else{
+      echo "Não funcionando :(";
+    }
 
 ?>

@@ -1,20 +1,48 @@
 <?php
+//Teste de Funcionamento
+//Verificar se a variavel entrar existe e Verificar se login e senha estiverem preenchidos
+  if(isset($_POST['entrar']) && !empty($_POST['nome'])  && !empty($_POST['senha'])) 
+  {
+    include_once('../config.php');
 
-$login = $_POST['nome'];
-$senha = $_POST['senha'];
+    $nome = $_POST['nome'];
+    $senha = $_POST['senha'];
 
-$link = mysqli_connect("localhost", "root", "", "hello_stock");
+    
+    //print_r('<br>Nome: ' . $nome);
+    //print_r( '<br>Senha: ' .$senha);
 
-$verifica = mysqli_query($link,"SELECT * FROM funcionario WHERE nome =
-    '$login' AND senha = '$senha'") or die("erro ao selecionar");
-      if (mysqli_num_rows($verifica)<=0){
-        echo"<script language='javascript' type='text/javascript'>
-        alert('Login e/ou senha incorretos');window.location
-        .href='login.html';</script>";
-        die();
-      }else{
-        setcookie("login",$login);
-        header("Location:estoque.php");
-      }
+    //Verificar se existe o nome e senha
+    $sql = "SELECT * FROM cliente WHERE nome = '$nome' and senha = '$senha' ";
+
+    //result recebe connection da pagina config.php
+    $verifica = $connection->query($sql);
+
+    //print_r  ($result);
+    //print_r  ($sql);
+
+    //Caso o numero de linhas do $verifica for menor que 1
+    if (mysqli_num_rows($verifica) < 1)
+    {
+      //Caso menor que 1, mostre o alerta
+
+      $alerta = "Nome e/ou senha incorretos";
+      echo "<script type='text/javascript'>alert('$alerta');</script>";
+
+      // LEMBRAR LEMBRAR
+      // LEMBRAR Criar sistema para voltar para essa tela  login.html
+      header('Location: login.html');
+    } 
+    else
+    {
+      header('Location: ../estoque/estoque.php');
+    }
+
+  }
+
+  else
+    {
+      header('Location: login.html');
+    }
 
 ?>
