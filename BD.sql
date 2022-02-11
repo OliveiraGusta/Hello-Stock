@@ -54,7 +54,6 @@ INSERT INTO `cliente` (`cod`, `nome`, `cpfcnpj`, `social`, `cep`, `endereco`, `b
 (2, 'gustavo', '21312415265', 'BrunoCompanies', '0998373', 'Rua Legal', 'Sp', '2132141', 'wkhdawbwjb@gmail.com', '31', 'SÃ£o Pulo', 'Ade', '123g');
 
 -- --------------------------------------------------------
-
 --
 -- Estrutura da tabela `compra`
 --
