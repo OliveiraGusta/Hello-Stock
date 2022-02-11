@@ -50,8 +50,8 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`cod`, `nome`, `cpfcnpj`, `social`, `cep`, `endereco`, `bairro`, `contato`, `email`, `endumero`, `cidade`, `estado`, `senha`) VALUES
-(9, 'brunoo', '21312415265', 'BrunoCompanies', '0998373', 'Rua Legal', 'Sp', '2132141', 'wkhdawbwjb@gmail.com', '31', 'SÃ£o Pulo', 'Ade', 'BJn%Hcs9V$'),
-(11, 'brunoo', '21312415265', 'BrunoCompanies', '0998373', 'Rua Legal', 'Sp', '2132141', 'wkhdawbwjb@gmail.com', '31', 'SÃ£o Pulo', 'Ade', 'c820d3cc9eb0c9c19d3234cc2110f66c');
+(1, 'brunoo', '21312415265', 'BrunoCompanies', '0998373', 'Rua Legal', 'Sp', '2132141', 'wkhdawbwjb@gmail.com', '31', 'SÃ£o Pulo', 'Ade', 'c820d3cc9eb0c9c19d3234cc2110f66c$'),
+(2, 'gustavo', '21312415265', 'BrunoCompanies', '0998373', 'Rua Legal', 'Sp', '2132141', 'wkhdawbwjb@gmail.com', '31', 'SÃ£o Pulo', 'Ade', '123g');
 
 -- --------------------------------------------------------
 
