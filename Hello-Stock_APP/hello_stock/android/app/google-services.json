@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "192852269165",
+    "project_id": "hello-stock-app-scan",
+    "storage_bucket": "hello-stock-app-scan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192852269165:android:6160fe0f5f19460f4d0764",
+        "android_client_info": {
+          "package_name": "com.example.hello_stock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "192852269165-fkd7osk7kv34kas3umfnjh4kgi6754q8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA44bZZNPDz0VsjyzhcpO8ZtIz1ZK7oc5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "192852269165-fkd7osk7kv34kas3umfnjh4kgi6754q8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
